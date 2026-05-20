@@ -1,0 +1,35 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": null,
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663678035233/WTNzDQbFVQY4j4ip8bjwC2",
+    "access_key_id": "ASIAZV3A2ECZEV3ZLEQN",
+    "secret_access_key": "tKvmo10oh1sq4Yh5nvrqfEGWsLOHUNNgub3LmG/K",
+    "session_token": "IQoJb3JpZ2luX2VjEBwaCXVzLWVhc3QtMSJHMEUCICOixidxhFb/iasOC1zL0D/0oRz8yraL/X8tPLqyPuhVAiEArUFQrM81xDg5ehzkSgQelHd16g6xL5hMC1GtUL4zISAq/wMI5f//////////ARAEGgw2NjUzODYwOTg4NjYiDB6nfEFUdE3886Y+6yrTA26FzFc+KMix7mJhJTF3Dr+a1/uxBopTU0fvZJPZlXiLEc0B/LIP+RohQCZlVX0XQC9VjHgXxa/fmBLdPM3hb9Stbh4DuTrSD9NSsdlM4Iv4l5VCULnYMeNQRkEbiF5lK/IhQ/DhCL0cxcrZg9gIp3ydT5GXtx3vUHbb0AHJjaX4A2FazINmdNdDXiOg48LEBCWjSOVUHI2Nka9b3m3OvdBn6dcGDsO/mbDjg9a6FaHYqWnc70unp9HVir2gYPwwlLwAZny17CapQDFLuLhF+JkJ60pg5Mjrs8KN+oe7D0SrFYSmSJ3A3ri0caGN52rrEWLRhZCQIVIE1myasG8i2j7sPj6WxYC3yjNxm+t3sdYXF7la86C7/HieFQK63eiCiZ9SqTWcb4FHagCBU2cSMW6NaXouLIGx3xgNfm+oSuXToO+p8f+eEwA2WJSmgwVU5oZ5qMuXKg/+fuFSC7Zogrc/C31O0g4vu6eSJkoi8nCwcORi4SNXERbIvq9Dep2VHOeU7gJPp/ce+HIyoU3OKSfXBx9nUtbSHh7CkGXED46PPenAl1EvvPP4gS19jUg7OYlDJSwwnFeov5HoyRJuG67Ol8+cT2mhhXkiaQeOlF2sRcxAMKDZtNAGOp0Bj6YMWbzYesXm+QPpfJUR5ffsF0Flp6rj8mA2pZkx4vzvQ1TT5ToobPzCq+PGsCB3EyrU9Fyo9BcE1mzHUIAhP7FfdtCvyp0qeIfv/ZrtaOxz7OyxYu1Sl5c/Cie5VVLsP2UAW8pKj1HsRGIGlCW3uTkdOoTQVnVICOhJfhzH+OKSHVzPZjf47H44qxEwfU7FtRq53eRyf8MLxBrZVw==",
+    "expiration": "2026-05-20T15:38:08.000Z"
+  },
+  "name": "dreamy-scoops-pos",
+  "path": "/home/ubuntu/dreamy-scoops-pos",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "eFpKR8x5oLRGxV2pLB4v9Y",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "NL4eERA3xTrhxC6Awmru7C",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Harits Luthfi",
+    "OWNER_OPEN_ID": "QVU45fzcC5uXVtuoY5MxAa",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "5b780beb-5f12-4f60-bc81-00fb2501fdb5",
+    "VITE_APP_ID": "WTNzDQbFVQY4j4ip8bjwC2",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "Dreamy Scoops POS",
+    "VITE_FRONTEND_FORGE_API_KEY": "kKMU2kts2gmMHpCUNULAEn",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
