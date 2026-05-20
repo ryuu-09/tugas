@@ -136,7 +136,7 @@ export const CartSidebar = ({
       {!isEmpty && (
         <div className="mb-6 pb-6 border-b border-pink/25">
           <label className="block text-xs font-semibold mb-2">Kode Promo</label>
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <Input
               placeholder="DREAMY10"
               value={promoCode}
@@ -146,7 +146,7 @@ export const CartSidebar = ({
             <Button
               onClick={handleApplyPromo}
               size="sm"
-              className="bg-pink text-white"
+              className="bg-pink text-white whitespace-nowrap"
             >
               Terapkan
             </Button>
@@ -166,7 +166,7 @@ export const CartSidebar = ({
             </p>
           </div>
           <label className="block text-xs font-semibold mb-2">Tukar Poin untuk Diskon</label>
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <Input
               type="number"
               placeholder="Jumlah poin"
@@ -179,7 +179,7 @@ export const CartSidebar = ({
               onClick={handleRedeemPoints}
               disabled={pointsToRedeem === 0}
               size="sm"
-              className="bg-yellow text-gray-800"
+              className="bg-yellow text-gray-800 whitespace-nowrap"
             >
               Tukar
             </Button>

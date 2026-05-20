@@ -46,10 +46,10 @@ export const ToppingModal = ({ item, onConfirm, onCancel }: ToppingModalProps) =
     <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[80] p-4 overflow-y-auto">
       <div className="glass-card p-6 md:p-8 max-w-2xl w-full my-auto max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="flex items-center gap-4 mb-6">
-          <span className="text-5xl">{item.emoji}</span>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
+          <span className="text-4xl sm:text-5xl flex-shrink-0">{item.emoji}</span>
           <div>
-            <h2 className="text-2xl font-bold text-gray-800">{item.name}</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-800">{item.name}</h2>
             <p className="text-gray-600">{item.description}</p>
             <p className="text-lg font-bold text-pink mt-1">{formatRupiah(item.price)}</p>
           </div>
@@ -59,7 +59,7 @@ export const ToppingModal = ({ item, onConfirm, onCancel }: ToppingModalProps) =
           {/* Toppings Section */}
           <div className="mb-6">
             <h3 className="font-bold text-lg mb-4 text-gray-800">🍨 Extra Toppings</h3>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {toppings.map(topping => (
                 <button
                   key={topping.id}
@@ -90,13 +90,13 @@ export const ToppingModal = ({ item, onConfirm, onCancel }: ToppingModalProps) =
           {/* Ice Level */}
           <div className="mb-6">
             <h3 className="font-bold text-lg mb-3 text-gray-800">❄️ Ice Level</h3>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               {(['normal', 'less', 'no'] as IceLevel[]).map(level => (
                 <button
                   key={level}
                   onClick={() => setIceLevel(level)}
                   className={`
-                    px-4 py-2 rounded-full font-semibold transition-all duration-250
+                    px-3 sm:px-4 py-2 rounded-full font-semibold transition-all duration-250 text-sm sm:text-base
                     ${
                       iceLevel === level
                         ? 'bg-gradient-to-r from-blue to-mint text-white'
@@ -115,13 +115,13 @@ export const ToppingModal = ({ item, onConfirm, onCancel }: ToppingModalProps) =
           {/* Sweetness Level */}
           <div className="mb-6">
             <h3 className="font-bold text-lg mb-3 text-gray-800">🍯 Sweetness Level</h3>
-            <div className="flex gap-3 flex-wrap">
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               {(['extra', 'normal', 'less', 'no'] as SweetnessLevel[]).map(level => (
                 <button
                   key={level}
                   onClick={() => setSweetnessLevel(level)}
                   className={`
-                    px-4 py-2 rounded-full font-semibold transition-all duration-250
+                    px-3 sm:px-4 py-2 rounded-full font-semibold transition-all duration-250 text-sm sm:text-base
                     ${
                       sweetnessLevel === level
                         ? 'bg-gradient-to-r from-yellow to-peach text-white'
@@ -171,11 +171,11 @@ export const ToppingModal = ({ item, onConfirm, onCancel }: ToppingModalProps) =
 
           {/* Price Preview */}
           <div className="bg-gradient-to-r from-pink/20 to-purple/20 p-4 rounded-lg mb-6">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-700">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+              <span className="text-gray-700 text-sm sm:text-base">
                 Extra topping: <span className="font-bold">+{formatRupiah(toppingPrice)}</span>
               </span>
-              <span className="text-lg font-bold text-pink">
+              <span className="text-base sm:text-lg font-bold text-pink">
                 Total: {formatRupiah(totalPrice)}
               </span>
             </div>

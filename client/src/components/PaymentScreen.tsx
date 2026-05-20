@@ -66,20 +66,20 @@ export const PaymentScreen = ({ order, onPaymentSuccess, onCancel }: PaymentScre
   return (
     <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[100] p-4 overflow-y-auto">
       <div className="glass-card p-6 md:p-8 max-w-2xl w-full my-auto">
-        <h2 className="text-3xl font-bold mb-2 text-center text-gray-800">Pilih Metode Pembayaran</h2>
-        <p className="text-center text-2xl font-bold text-pink mb-8">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-center text-gray-800">Pilih Metode Pembayaran</h2>
+        <p className="text-center text-xl sm:text-2xl font-bold text-pink mb-8">
           {formatRupiah(order.total)}
         </p>
 
-        <div className="grid grid-cols-2 gap-4 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 mb-6">
           {paymentMethods.map(method => (
             <button
               key={method.id}
               onClick={() => setSelectedMethod(method.id)}
-              className="glass-card p-6 rounded-[20px] hover:shadow-xl transition-all duration-250 transform hover:-translate-y-2"
+              className="glass-card p-3 sm:p-6 rounded-[20px] hover:shadow-xl transition-all duration-250 transform hover:-translate-y-2"
             >
-              <div className="text-5xl mb-3 text-center">{method.icon}</div>
-              <p className="font-bold text-center text-gray-800">{method.label}</p>
+              <div className="text-3xl sm:text-5xl mb-2 sm:mb-3 text-center">{method.icon}</div>
+              <p className="font-bold text-center text-xs sm:text-sm text-gray-800">{method.label}</p>
             </button>
           ))}
         </div>

@@ -157,13 +157,13 @@ export const OrderTypeSelect = ({
         <div className="glass-card p-6 md:p-8 max-w-2xl w-full my-auto">
           <h3 className="text-2xl font-bold mb-6 text-mint">🪑 Dine In - Pilih Meja</h3>
 
-          <div className="grid grid-cols-5 gap-3 mb-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 mb-6">
             {tables.map(table => (
               <button
                 key={table.id}
                 onClick={() => setSelectedTable(table.id)}
                 className={`
-                  p-4 rounded-lg font-bold transition-all duration-250
+                  p-2 sm:p-3 md:p-4 rounded-lg font-bold transition-all duration-250 text-sm sm:text-base
                   ${
                     table.status === 'occupied'
                       ? 'bg-red-100 text-red-700 cursor-not-allowed opacity-50'
@@ -174,10 +174,10 @@ export const OrderTypeSelect = ({
                 `}
                 disabled={table.status === 'occupied'}
               >
-                <div className="text-2xl mb-1">
+                <div className="text-lg sm:text-2xl mb-1">
                   {table.status === 'occupied' ? '🔴' : '🟢'}
                 </div>
-                T{String(table.number).padStart(2, '0')}
+                <span className="text-xs sm:text-sm">T{String(table.number).padStart(2, '0')}</span>
               </button>
             ))}
           </div>
