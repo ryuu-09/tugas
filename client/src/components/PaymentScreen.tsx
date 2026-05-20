@@ -64,7 +64,7 @@ export const PaymentScreen = ({ order, onPaymentSuccess, onCancel }: PaymentScre
   }
 
   return (
-    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[100] p-4 overflow-y-auto">
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[120] p-4 overflow-y-auto">
       <div className="glass-card p-6 md:p-8 max-w-2xl w-full my-auto">
         <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-center text-gray-800">Pilih Metode Pembayaran</h2>
         <p className="text-center text-xl sm:text-2xl font-bold text-pink mb-8">

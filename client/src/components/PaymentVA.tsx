@@ -73,7 +73,7 @@ export const PaymentVA = ({ order, onSuccess, onCancel }: PaymentVAProps) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[110] p-4 overflow-y-auto">
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[130] p-4 overflow-y-auto">
       <div className="glass-card p-6 md:p-8 max-w-2xl w-full my-auto">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">🏦 Virtual Account</h2>
 

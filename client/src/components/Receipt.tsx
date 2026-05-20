@@ -10,7 +10,7 @@ interface ReceiptProps {
 
 export const Receipt = ({ order, onClose, onPrint }: ReceiptProps) => {
   return (
-    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[120] p-4 overflow-y-auto">
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[140] p-4 overflow-y-auto">
       <div className="glass-card p-6 md:p-8 max-w-md w-full my-auto">
         <div className="text-center mb-6">
           <div className="text-5xl mb-2">🎉</div>

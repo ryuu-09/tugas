@@ -35,7 +35,7 @@ export const PaymentCash = ({ order, onSuccess, onCancel }: PaymentCashProps) =>
   };
 
   return (
-    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[110] p-4 overflow-y-auto">
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[130] p-4 overflow-y-auto">
       <div className="glass-card p-6 md:p-8 max-w-md w-full my-auto">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">💵 Pembayaran Cash</h2>
 
@@ -58,7 +58,7 @@ export const PaymentCash = ({ order, onSuccess, onCancel }: PaymentCashProps) =>
         </div>
 
         {/* Quick Amount Buttons */}
-        <div className="grid grid-cols-4 gap-2 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6">
           {quickAmounts.map((amount, i) => (
             <button
               key={i}

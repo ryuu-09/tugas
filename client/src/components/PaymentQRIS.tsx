@@ -41,7 +41,7 @@ export const PaymentQRIS = ({ order, onSuccess, onCancel }: PaymentQRISProps) =>
   };
 
   return (
-    <div className="fixed inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center z-[110] p-4 overflow-y-auto">
+    <div className="fixed inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center z-[130] p-4 overflow-y-auto">
       <div className="glass-card p-6 md:p-8 max-w-md w-full shadow-2xl border border-white/20 my-auto">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-gray-800">📱 QRIS Payment</h2>
