@@ -1,3 +1,26 @@
+/*
+  Z-Index Stacking Context Documentation
+  ========================================
+  
+  This application uses a layered z-index system to manage modal and overlay stacking.
+  All z-index values should follow this hierarchy to prevent overlapping issues.
+  
+  z-50:    Header (sticky navigation)
+  z-[100]: OrderTypeSelect modal (initial order selection)
+  z-[105]: Sheet/Drawer (mobile cart sidebar)
+  z-[110]: ToppingModal (menu item customization)
+  z-[120]: PaymentScreen (payment method selection)
+  z-[130]: Payment modals (QRIS, VA, Cash, Debit)
+  z-[140]: Receipt (success screen after payment)
+  
+  When adding new modals or overlays:
+  1. Determine if it should appear above or below existing modals
+  2. Choose a z-index value that fits the hierarchy
+  3. Update this documentation
+  4. Test on both desktop and mobile viewports
+  5. Verify that all interactive elements are accessible
+*/
+
 @import "tailwindcss";
 @import "tw-animate-css";
 

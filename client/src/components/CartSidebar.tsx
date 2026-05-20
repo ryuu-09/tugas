@@ -227,17 +227,23 @@ export const CartSidebar = ({
       )}
 
       {/* Checkout Button */}
-      <Button
-        onClick={onCheckout}
-        disabled={isEmpty}
-        className={`w-full py-3 font-bold text-white rounded-full ${
-          isEmpty
-            ? 'bg-gray-300 cursor-not-allowed'
-            : 'gradient-button'
-        }`}
-      >
-        💳 Pilih Pembayaran
-      </Button>
+      <div className="relative">
+        <Button
+          onClick={onCheckout}
+          disabled={isEmpty}
+          className={`w-full py-3 font-bold text-white rounded-full transition-all duration-250 ${
+            isEmpty
+              ? 'bg-gray-400 cursor-not-allowed opacity-60 hover:opacity-60'
+              : 'gradient-button hover:shadow-lg hover:-translate-y-1'
+          }`}
+          title={isEmpty ? 'Tambahkan item ke keranjang untuk melanjutkan' : 'Lanjut ke pembayaran'}
+        >
+          💳 Pilih Pembayaran
+        </Button>
+        {isEmpty && (
+          <p className="text-xs text-gray-600 text-center mt-2">Tambahkan item ke keranjang untuk melanjutkan</p>
+        )}
+      </div>
     </div>
   );
 };

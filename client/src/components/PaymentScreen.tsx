@@ -76,9 +76,11 @@ export const PaymentScreen = ({ order, onPaymentSuccess, onCancel }: PaymentScre
             <button
               key={method.id}
               onClick={() => setSelectedMethod(method.id)}
-              className="glass-card p-3 sm:p-6 rounded-[20px] hover:shadow-xl transition-all duration-250 transform hover:-translate-y-2"
+              className="glass-card p-3 sm:p-6 rounded-[20px] hover:shadow-xl transition-all duration-250 transform hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-pink focus:ring-offset-2"
+              aria-label={`Pilih metode pembayaran ${method.label}`}
+              title={`Pembayaran dengan ${method.label}`}
             >
-              <div className="text-3xl sm:text-5xl mb-2 sm:mb-3 text-center">{method.icon}</div>
+              <div className="text-3xl sm:text-5xl mb-2 sm:mb-3 text-center" aria-hidden="true">{method.icon}</div>
               <p className="font-bold text-center text-xs sm:text-sm text-gray-800">{method.label}</p>
             </button>
           ))}

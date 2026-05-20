@@ -12,32 +12,47 @@ interface PaymentQRISProps {
 
 export const PaymentQRIS = ({ order, onSuccess, onCancel }: PaymentQRISProps) => {
   const [timeLeft, setTimeLeft] = useState(300000); // 5 minutes
-  const [status, setStatus] = useState<'waiting' | 'processing' | 'success'>('waiting');
+  const [status, setStatus] = useState<'waiting' | 'processing' | 'success' | 'expired'>('waiting');
   const [progress, setProgress] = useState(100);
 
   // Use the provided QRIS data
   const qrisPayload = "00020101021126570011ID.DANA.WWW011893600915302429220802090242922080303UMI51440014ID.CO.QRIS.WWW0215ID10265135796010303UMI5204737253033605802ID5904Revy6015Kab. Karanganya6105577836304A713";
 
   useEffect(() => {
-    if (timeLeft <= 0) return;
+    if (timeLeft <= 0) {
+      if (status === 'waiting') {
+        setStatus('expired');
+      }
+      return;
+    }
 
     const interval = setInterval(() => {
       setTimeLeft(prev => {
         const newTime = prev - 1000;
         setProgress((newTime / 300000) * 100);
+        if (newTime <= 0 && status === 'waiting') {
+          setStatus('expired');
+        }
         return newTime;
       });
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [timeLeft]);
+  }, [timeLeft, status]);
 
   const handleSimulatePayment = async () => {
+    if (status !== 'waiting') return;
     setStatus('processing');
     await new Promise(resolve => setTimeout(resolve, 2000));
     setStatus('success');
     await new Promise(resolve => setTimeout(resolve, 1000));
     onSuccess();
+  };
+
+  const handleRetry = () => {
+    setTimeLeft(300000);
+    setProgress(100);
+    setStatus('waiting');
   };
 
   return (
@@ -125,6 +140,14 @@ export const PaymentQRIS = ({ order, onSuccess, onCancel }: PaymentQRISProps) =>
               <p className="font-bold">Pembayaran Berhasil!</p>
             </div>
           )}
+          {status === 'expired' && (
+            <div className="flex items-center justify-center gap-2 text-red-500">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              <p className="font-bold">Waktu Pembayaran Habis</p>
+            </div>
+          )}
         </div>
 
         {/* Buttons */}
@@ -133,17 +156,29 @@ export const PaymentQRIS = ({ order, onSuccess, onCancel }: PaymentQRISProps) =>
             onClick={onCancel}
             variant="ghost"
             className="flex-1 text-gray-500 hover:text-gray-700"
-            disabled={status !== 'waiting'}
+            disabled={status === 'processing' || status === 'success'}
+            aria-label="Batal pembayaran QRIS"
           >
             Batal
           </Button>
-          <Button
-            onClick={handleSimulatePayment}
-            disabled={status !== 'waiting'}
-            className="flex-[2] gradient-button text-white font-bold shadow-lg shadow-pink/20"
-          >
-            Simulasi Bayar
-          </Button>
+          {status === 'expired' ? (
+            <Button
+              onClick={handleRetry}
+              className="flex-[2] gradient-button text-white font-bold shadow-lg shadow-pink/20"
+              aria-label="Coba pembayaran QRIS lagi"
+            >
+              🔄 Coba Lagi
+            </Button>
+          ) : (
+            <Button
+              onClick={handleSimulatePayment}
+              disabled={status !== 'waiting'}
+              className="flex-[2] gradient-button text-white font-bold shadow-lg shadow-pink/20"
+              aria-label="Simulasi pembayaran QRIS"
+            >
+              Simulasi Bayar
+            </Button>
+          )}
         </div>
       </div>
     </div>

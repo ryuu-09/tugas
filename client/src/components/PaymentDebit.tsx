@@ -118,6 +118,7 @@ export const PaymentDebit = ({ order, onSuccess, onCancel }: PaymentDebitProps) 
                 value={formattedCardNumber}
                 onChange={e => handleCardNumberChange(e.target.value)}
                 className="w-full font-mono"
+                aria-label="Nomor kartu debit"
               />
               </div>
 
@@ -128,6 +129,7 @@ export const PaymentDebit = ({ order, onSuccess, onCancel }: PaymentDebitProps) 
                   value={cardName}
                   onChange={e => setCardName(e.target.value)}
                   className="w-full uppercase"
+                  aria-label="Nama pemegang kartu"
                 />
               </div>
 
@@ -139,6 +141,7 @@ export const PaymentDebit = ({ order, onSuccess, onCancel }: PaymentDebitProps) 
                     value={expiryMonth}
                     onChange={e => handleExpiryMonthChange(e.target.value)}
                     className="w-full text-center"
+                    aria-label="Bulan kadaluarsa"
                   />
                 </div>
                 <div>
@@ -148,6 +151,7 @@ export const PaymentDebit = ({ order, onSuccess, onCancel }: PaymentDebitProps) 
                     value={expiryYear}
                     onChange={e => handleExpiryYearChange(e.target.value)}
                     className="w-full text-center"
+                    aria-label="Tahun kadaluarsa"
                   />
                 </div>
                 <div>
@@ -158,6 +162,7 @@ export const PaymentDebit = ({ order, onSuccess, onCancel }: PaymentDebitProps) 
                     value={cvv}
                     onChange={e => handleCVVChange(e.target.value)}
                     className="w-full text-center"
+                    aria-label="Kode CVV"
                   />
                 </div>
               </div>

@@ -13,7 +13,7 @@ interface PaymentCashProps {
 export const PaymentCash = ({ order, onSuccess, onCancel }: PaymentCashProps) => {
   const [cashReceived, setCashReceived] = useState(0);
 
-  const quickAmounts = [5000, 10000, 20000, 50000, 100000, 50000, 100000, 200000];
+  const quickAmounts = [5000, 10000, 20000, 50000, 100000, 200000];
 
   const handleQuickAmount = (amount: number) => {
     setCashReceived(prev => prev + amount);
@@ -63,7 +63,9 @@ export const PaymentCash = ({ order, onSuccess, onCancel }: PaymentCashProps) =>
             <button
               key={i}
               onClick={() => handleQuickAmount(amount)}
-              className="bg-white/50 hover:bg-white/75 px-2 py-2 rounded-lg font-bold text-xs transition-all duration-250"
+              className="bg-white/50 hover:bg-white/75 px-2 py-2 rounded-lg font-bold text-xs transition-all duration-250 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+              aria-label={`Tambah ${formatRupiah(amount)}`}
+              title={`Tambah ${formatRupiah(amount)}`}
             >
               +{formatRupiah(amount)}
             </button>
@@ -117,11 +119,12 @@ export const PaymentCash = ({ order, onSuccess, onCancel }: PaymentCashProps) =>
           <Button
             onClick={handleConfirm}
             disabled={isInsufficient}
-            className={`flex-1 text-white font-bold ${
+            className={`flex-1 text-white font-bold transition-all duration-250 ${
               isInsufficient
-                ? 'bg-gray-300 cursor-not-allowed'
-                : 'bg-gradient-to-r from-green-400 to-green-500 hover:shadow-lg'
+                ? 'bg-gray-400 cursor-not-allowed opacity-60'
+                : 'bg-gradient-to-r from-green-400 to-green-500 hover:shadow-lg hover:-translate-y-1'
             }`}
+            title={isInsufficient ? `Kurang ${formatRupiah(Math.abs(difference))}` : 'Konfirmasi pembayaran'}
           >
             ✅ Konfirmasi
           </Button>
