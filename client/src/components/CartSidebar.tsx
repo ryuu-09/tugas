@@ -51,7 +51,7 @@ export const CartSidebar = ({
   const maxPointsRedeemable = Math.floor(order.subtotal * 0.5 / 1000);
 
   return (
-    <div className="w-full md:w-[370px] glass-card p-6 rounded-[24px] h-full flex flex-col">
+    <div className="w-full md:w-[370px] glass-card p-4 md:p-6 rounded-[24px] h-full flex flex-col">
       {/* Header */}
       <div className="mb-6 pb-4 border-b border-pink/25">
         <h2 className="text-xl font-bold text-gray-800 mb-2">🛒 Keranjang</h2>

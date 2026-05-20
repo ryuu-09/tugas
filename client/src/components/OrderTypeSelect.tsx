@@ -47,7 +47,7 @@ export const OrderTypeSelect = ({
 
   if (step === 'select') {
     return (
-      <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50">
+      <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[90] p-4 overflow-y-auto">
         <div className="w-full max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8 gradient-text">Pilih Tipe Pesanan</h2>
 
@@ -98,8 +98,8 @@ export const OrderTypeSelect = ({
 
   if (step === 'takeaway') {
     return (
-      <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50">
-        <div className="glass-card p-8 max-w-md w-full mx-4">
+      <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[90] p-4 overflow-y-auto">
+        <div className="glass-card p-6 md:p-8 max-w-md w-full my-auto">
           <h3 className="text-2xl font-bold mb-6 text-pink">🛍️ Takeaway</h3>
 
           <div className="space-y-4">
@@ -153,8 +153,8 @@ export const OrderTypeSelect = ({
 
   if (step === 'dine-in') {
     return (
-      <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-        <div className="glass-card p-8 max-w-2xl w-full">
+      <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[90] p-4 overflow-y-auto p-4">
+        <div className="glass-card p-6 md:p-8 max-w-2xl w-full my-auto">
           <h3 className="text-2xl font-bold mb-6 text-mint">🪑 Dine In - Pilih Meja</h3>
 
           <div className="grid grid-cols-5 gap-3 mb-6">
@@ -236,8 +236,8 @@ export const OrderTypeSelect = ({
 
   if (step === 'vip') {
     return (
-      <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-        <div className="glass-card p-8 max-w-2xl w-full">
+      <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[90] p-4 overflow-y-auto p-4">
+        <div className="glass-card p-6 md:p-8 max-w-2xl w-full my-auto">
           <h3 className="text-2xl font-bold mb-6 text-yellow">👑 VIP Room - Pilih Ruangan</h3>
 
           <div className="grid grid-cols-2 gap-4 mb-6">

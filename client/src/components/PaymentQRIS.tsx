@@ -15,8 +15,8 @@ export const PaymentQRIS = ({ order, onSuccess, onCancel }: PaymentQRISProps) =>
   const [status, setStatus] = useState<'waiting' | 'processing' | 'success'>('waiting');
   const [progress, setProgress] = useState(100);
 
-  // Generate a mock QRIS string
-  const qrisPayload = `00020101021126570011ID.CO.QRIS.WWW01189360000000000000000215ID10202123456780303U0051440014ID.CO.QRIS.WWW520458125303360540${order.total}.005802ID5913Dreamy Scoops6007Jakarta6105123456207070303U006304ABCD`;
+  // Use the provided QRIS data
+  const qrisPayload = "00020101021126570011ID.DANA.WWW011893600915302429220802090242922080303UMI51440014ID.CO.QRIS.WWW0215ID10265135796010303UMI5204737253033605802ID5904Revy6015Kab. Karanganya6105577836304A713";
 
   useEffect(() => {
     if (timeLeft <= 0) return;
@@ -41,8 +41,8 @@ export const PaymentQRIS = ({ order, onSuccess, onCancel }: PaymentQRISProps) =>
   };
 
   return (
-    <div className="fixed inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center z-50 p-4">
-      <div className="glass-card p-8 max-w-md w-full shadow-2xl border border-white/20">
+    <div className="fixed inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center z-[110] p-4 overflow-y-auto">
+      <div className="glass-card p-6 md:p-8 max-w-md w-full shadow-2xl border border-white/20 my-auto">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-gray-800">📱 QRIS Payment</h2>
           <div className="bg-pink/10 text-pink px-3 py-1 rounded-full text-xs font-bold">
@@ -53,30 +53,31 @@ export const PaymentQRIS = ({ order, onSuccess, onCancel }: PaymentQRISProps) =>
         {/* Merchant Info */}
         <div className="bg-white/60 p-4 rounded-xl mb-6 text-center border border-pink/10">
           <p className="text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Merchant</p>
-          <p className="text-xl font-black text-gray-800">DREAMY SCOOPS</p>
-          <p className="text-xs text-gray-500 mt-1 font-mono">NMID: ID1020212345678</p>
+          <p className="text-xl font-black text-gray-800">REVY</p>
+          <p className="text-xs text-gray-500 mt-1 font-mono">NMID: ID1026513579601</p>
         </div>
 
         {/* QR Code */}
-        <div className="bg-white p-6 rounded-2xl mb-6 flex flex-col items-center justify-center shadow-inner border border-gray-100">
+        <div className="bg-white p-4 md:p-6 rounded-2xl mb-6 flex flex-col items-center justify-center shadow-inner border border-gray-100">
           <div className="relative p-2 bg-white">
              <QRCodeSVG 
                 value={qrisPayload} 
-                size={200}
+                size={180}
                 level="H"
                 includeMargin={true}
+                className="w-full max-w-[200px] h-auto"
                 imageSettings={{
                     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/QRIS_logo.svg/1200px-QRIS_logo.svg.png",
                     x: undefined,
                     y: undefined,
-                    height: 40,
-                    width: 40,
+                    height: 35,
+                    width: 35,
                     excavate: true,
                 }}
              />
           </div>
-          <p className="mt-4 text-[10px] text-gray-400 font-mono uppercase tracking-tighter">
-            Scan QR code with any supported payment app
+          <p className="mt-4 text-[10px] text-gray-400 font-mono uppercase tracking-tighter text-center">
+            Scan QR code dengan aplikasi pembayaran yang didukung
           </p>
         </div>
 

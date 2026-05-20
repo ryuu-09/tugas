@@ -43,8 +43,8 @@ export const ToppingModal = ({ item, onConfirm, onCancel }: ToppingModalProps) =
   };
 
   return (
-    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="glass-card p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[80] p-4 overflow-y-auto">
+      <div className="glass-card p-6 md:p-8 max-w-2xl w-full my-auto max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
           <span className="text-5xl">{item.emoji}</span>
